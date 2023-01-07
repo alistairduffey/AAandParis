@@ -12,8 +12,8 @@ from tqdm import tqdm
 import xarray as xr
 from xmip.preprocessing import rename_cmip6
 
-#exps = ["ssp370", "historical"]
-exps = ["historical"]
+exps = ["ssp370", "ssp126"]
+#exps = ["historical"]
 #exps = ['ssp245']
 #exps = ['ssp126']
 dirs = []
@@ -72,5 +72,5 @@ def preprocess_multi_ens(folder, arctic_cut_off=66):
         except:
             print(name)
 
-for dir in tqdm(dirs[253:]):
+for dir in tqdm(dirs):
     preprocess_multi_ens(dir)
