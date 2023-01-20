@@ -12,7 +12,7 @@ from tqdm import tqdm
 import xarray as xr
 from xmip.preprocessing import rename_cmip6
 
-exps = ["ssp370", "ssp126"]
+exps = ["ssp370", "ssp126", "ssp245", "historical"]
 #exps = ["historical"]
 #exps = ['ssp245']
 #exps = ['ssp126']
@@ -70,7 +70,7 @@ def preprocess_multi_ens(folder, arctic_cut_off=66):
             df['Ensemble_member'] = folder.split('/')[9]
             df.to_csv(outpath) 
         except:
-            print(name)
+            print(folder)
 
 for dir in tqdm(dirs):
     preprocess_multi_ens(dir)
